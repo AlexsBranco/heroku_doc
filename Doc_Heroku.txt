@@ -37,6 +37,3 @@ https://git.heroku.com/glacial-hamlet-27113.git
 
 Documentação Heroku:
 https://devcenter.heroku.com/articles/dyno-types
-
-
-Comandos Heroku: 
