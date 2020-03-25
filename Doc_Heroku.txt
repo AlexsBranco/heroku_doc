@@ -10,7 +10,6 @@ https://git.heroku.com/glacial-hamlet-27113.git
 Documentação Heroku:
 https://devcenter.heroku.com/articles/dyno-types
 
-
 Comandos Heroku:
 
 --Consulta logs
@@ -24,3 +23,5 @@ heroku ps
 
 --Fazer chamada do serviço dynos via terminal
 heroku run bash
+
+ajuste arquivo
