@@ -1,36 +1,8 @@
-Verificar arquivo de configuração do GIT:
-
-Comando: 
-git config --list
-
-diff.astextplain.textconv=astextplain
-filter.lfs.clean=git-lfs clean -- %f
-filter.lfs.smudge=git-lfs smudge -- %f
-filter.lfs.process=git-lfs filter-process
-filter.lfs.required=true
-http.sslbackend=openssl
-http.sslcainfo=C:/Program Files/Git/mingw64/ssl/certs/ca-bundle.crt
-core.autocrlf=true
-core.fscache=true
-core.symlinks=false
-credential.helper=manager
-user.name=alex silva
-user.email=tecbmabs@gmail.com
-core.editor='C:\Program Files (x86)\Notepad++\notepad++.exe' -multiInst -notabbar -nosession -noPlugin
-core.repositoryformatversion=0
-core.filemode=false
-core.bare=false
-core.logallrefupdates=true
-core.symlinks=false
-core.ignorecase=true
-gui.wmstate=zoomed
-gui.geometry=893x435+156+156 284 315
-
 Consulta do DB no Heroku:
 
 postgres://mjcivgqvrlihgx:0235aadebda715e1961e44c730f5e0cbc4e19bccf7bd404a15aa5810699ac5a9@ec2-18-213-176-229.compute-1.amazonaws.com:5432/dcjfnkgq545bk1
 
-Site Criado onde roda o serviço do Heroku: https://glacial-hamlet-27113.herokuapp.com/
+Site Criado para rodar o serviço do Heroku: https://glacial-hamlet-27113.herokuapp.com/
 
 Link URL com source no Heroku:
 https://git.heroku.com/glacial-hamlet-27113.git
@@ -38,5 +10,18 @@ https://git.heroku.com/glacial-hamlet-27113.git
 Documentação Heroku:
 https://devcenter.heroku.com/articles/dyno-types
 
+Comandos Heroku:
 
-Comandos Heroku: 
+--Consulta logs
+heroku logs --tail
+
+--Abrir aplicação via terminal
+heroku open
+
+--Checar quais dynos estão em execução
+heroku ps
+
+--Fazer chamada do serviço dynos via terminal
+heroku run bash
+
+ajuste arquivo
