@@ -2,14 +2,20 @@ Consulta do DB no Heroku:
 
 postgres://mjcivgqvrlihgx:0235aadebda715e1961e44c730f5e0cbc4e19bccf7bd404a15aa5810699ac5a9@ec2-18-213-176-229.compute-1.amazonaws.com:5432/dcjfnkgq545bk1
 
-Site Criado para rodar o serviço do Heroku: https://glacial-hamlet-27113.herokuapp.com/
+Site Criado para rodar o serviço do Heroku:
+https://glacial-hamlet-27113.herokuapp.com/
 
 Link URL com source no Heroku:
 https://git.heroku.com/glacial-hamlet-27113.git
 
 Documentação Heroku:
 https://devcenter.heroku.com/articles/dyno-types
-<<<<<<< HEAD
+
+Passos para rodar o serviço java no Heroku:
+https://devcenter.heroku.com/articles/getting-started-with-java#start-a-one-off-dyno
+
+Configurar Postgree com Salesforce
+https://trailhead.salesforce.com/content/learn/projects/quickstart-heroku-connect/qs-heroku-connect-2
 
 Comandos Heroku:
 
@@ -24,3 +30,58 @@ heroku ps
 
 --Fazer chamada do serviço dynos via terminal
 heroku run bash
+
+__________________________________________________________________
+
+Informações sobre dynos (containers gerenciados):
+
+https://devcenter.heroku.com/categories/dynos
+
+
+__________________________________________________________________
+**********Rodar na web:
+
+Abrir o website para alteração de telefone no Sales force:
+http://heroku-app-feature.herokuapp.com/
+
+
+**********Rodar mesmo projeto local:
+
+Seguir passos abaixo para rodar local:
+
+1) Abrir o CMD com acesso Admn.
+2) logar no heroku através do comando heroku login
+3) Acessar o diretório do repositório do GIT
+4) executar o comando para start do NODE JS.
+
+4.1- npm update
+
+4.2- setar DATABASE_URL e dar start do npm:
+
+SET DATABASE_URL=`heroku config:get DATABASE_URL`
+SET PGSSLMODE=require
+npm start
+
+--acesso que está no GITHUB
+SET DATABASE_URL=postgres://foo:bar@asdf.com:5432/1234
+SET PGSSLMODE=require
+npm start
+
+5) Abrir o browser e acesso o link http://localhost:5000.
+_________________________________________________________________
+
+Passos executados para compilação via HEROKU:
+
+1)Precisa apontar o respositorio vinculado no Heroku..
+
+git remote add origin https://github.com/AlexsBranco/js_repository.git
+
+heroku git:remote -a js-app-br
+
+2) Consultar o repositorio remoto do git
+
+git remote show heroku
+
+3) Subir para o heroku app
+
+git push heroku master
