@@ -1,0 +1,97 @@
+Passos para criar e atualizar repositories no Github:
+
+1) Acessar a conta no site do Gitub.
+2) Criar um novo repositório.
+3) Copiar a URL do repo. Exemplo: git@github.com:AlexsBranco/heroku_doc.git
+4) Criar uma pasta local para trabalho.
+5) Executar o comando git clone <repositore>. (git clone git@github.com:AlexsBranco/heroku_doc.git)
+6) Caso apresentar erro de Permission Denied. Seguir tutorial para config a chave de acesso SSH para adicionar no GitHub.
+URL:https://medium.com/@rgdev/como-adicionar-uma-chave-ssh-na-sua-conta-do-github-linux-e0f19bbc4265
+URL: https://help.github.com/pt/github/authenticating-to-github/error-permission-denied-publickey
+7) Criar um branch do repositório original. Comando: git checkout -b <nome_da_tarefa>
+8) Após inclusão do arquivo fazer um git add <nome_dos_arquivos> para adicionar ao novo repositorio.
+9) Utilizar o comando git status para check dos arquivos na branch.
+10) Próximo passo será o git commit -m "mensagem de commit". Para commit das alterações.
+11) Fazendo Merge: Utilizar o comando git diff master. (No exemplo dado: diff --git a/index.html b/index.html.
+12) Retornando as alterações para master (trunk). Usar o comando git checkout master
+13) Para fazer o merge das alterações da branch, usar o comando git merge <nome_da_branch>.
+14) Alterações devidamente gravadas na master é hora de enviar para o GitHub, usando o comando
+git push origin master ou somente um git push.
+15) Consultar os arquivos atualizados no github.
+
+Comandos gerais do GIT:
+
+--Configurar app de texto
+git config --global core.editor "'C:/Program Files/Sublime Text 2/sublime_text.exe' -n -w"
+
+--Retonar dados das variáveis globais user.name e 
+git config --global user.name
+
+--Retornar email global
+git config --global user.email
+
+--Consulta arquivo de configuração do GIT
+git config --list
+
+diff.astextplain.textconv=astextplain
+filter.lfs.clean=git-lfs clean -- %f
+filter.lfs.smudge=git-lfs smudge -- %f
+filter.lfs.process=git-lfs filter-process
+filter.lfs.required=true
+http.sslbackend=openssl
+http.sslcainfo=C:/Program Files/Git/mingw64/ssl/certs/ca-bundle.crt
+core.autocrlf=true
+core.fscache=true
+core.symlinks=false
+credential.helper=manager
+user.name=alex silva
+user.email=tecbmabs@gmail.com
+core.editor='C:\Program Files (x86)\Notepad++\notepad++.exe' -multiInst -notabbar -nosession -noPlugin
+core.repositoryformatversion=0
+core.filemode=false
+core.bare=false
+core.logallrefupdates=true
+core.symlinks=false
+core.ignorecase=true
+gui.wmstate=zoomed
+gui.geometry=893x435+156+156 284 315
+
+--Consultar status atual
+git status
+
+--arquivos SSH chave de acesso
+ls -al ~/.ssh
+
+--Consultar agente atual no git
+eval "$(ssh-agent -s)"
+
+--Retorna a chave de acesso
+cat ~/.ssh/id_rsa.pub
+
+--Consultar as branches existentes localmente
+git branch -v
+
+--Consultar as branches existentes remotamente
+git remote show origin
+
+--remover vinculo do repositorio remoto
+git remote rm origin
+
+--adicionar repositorio remoto
+git remote add 
+
+--mostrar alterações feitas
+git show
+
+--Comando heroku para associar o repositório remoto no git
+heroku git:remote -a https://git.heroku.com/js-app-br.git
+
+Passos Commit via Heroku:
+
+--Requisitos: Fazer primeiro o add e commit dos respectivos arquivos.
+
+--Setar a remote URL passando heroku como referencia:
+git remote set-url heroku https://git.heroku.com/js-app-br.git
+
+--Depois disso será possível subir alteração ao Github, deve usar o comando abaixo:
+git push --set-upstream heroku master
