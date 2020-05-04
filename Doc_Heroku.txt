@@ -43,32 +43,40 @@ __________________________________________________________________
 
 Abrir o website para alteração de telefone no Sales force:
 http://heroku-app-feature.herokuapp.com/
+http://quiet-atoll-54250.herokuapp.com/
 
 
 **********Rodar mesmo projeto local:
 
 Seguir passos abaixo para rodar local:
 
+Primeiro consultar:
+https://trailhead.salesforce.com/pt-BR/content/learn/projects/quickstart-heroku-connect/qs-heroku-connect-3
+
+Detalhes:
 1) Abrir o CMD com acesso Admn.
 2) logar no heroku através do comando heroku login
 3) Acessar o diretório do repositório do GIT
+
+Fazer:
+	- Verificar os app do heroku (heroku apps)
+	- Então setar o repositório heroku com algum destes apps retornados: heroku git:remote -a <APP_NAME>
+	- npm update
+
 4) executar o comando para start do NODE JS.
-
 4.1- npm update
-
-4.2- setar DATABASE_URL e dar start do npm:
-
-SET DATABASE_URL=`heroku config:get DATABASE_URL`
-SET PGSSLMODE=require
-npm start
+4.2- setar DATABASE_URL conforme está no Heroku.
 
 --acesso que está no GITHUB
-SET DATABASE_URL=postgres://foo:bar@asdf.com:5432/1234
+SET DATABASE_URL=postgres://lvnqxnwfudnvhd:5f9148608ddd94c48dee7c58eddcfa3669eb07b016eeae2d42fe20dcf2c6434e@ec2-52-87-135-240.compute-1.amazonaws.com:5432/d6k42ojlbbnuno
 SET PGSSLMODE=require
 npm start
 
 5) Abrir o browser e acesso o link http://localhost:5000.
 _________________________________________________________________
+URL mostra a configuração no Heroku:
+
+https://trailhead.salesforce.com/content/learn/projects/quickstart-heroku-connect/qs-heroku-connect-2
 
 Passos executados para compilação via HEROKU:
 
@@ -84,4 +92,4 @@ git remote show heroku
 
 3) Subir para o heroku app
 
-git push heroku master
+git push heroku  
